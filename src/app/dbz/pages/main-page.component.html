@@ -1,0 +1,18 @@
+
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- entre llaves [] se envian propiedades de componente padre a hijo -->
+        <!-- () para escuchar el evento del hijo y ejecutar la funcion onDeleteCharacter enviandole como
+        argumento el $event, que aqui viene lo que emite el evento -->
+        <dbz-list
+            [characterList]="characters"
+            (onDelete)="onDeleteCharacter($event)"></dbz-list>
+    </div>
+
+    <div class="col">
+       <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    </div>
+</div>
